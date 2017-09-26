@@ -1,0 +1,8 @@
+{
+  "lambda": {
+    "role": "dialogtest-executor",
+    "name": "dialogtest",
+    "region": "eu-west-1",
+    "timeout": "10"
+  }
+}
