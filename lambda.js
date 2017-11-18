@@ -87,13 +87,15 @@ function emitError(alexa, err) {
     alexa.emit(':tell', 'Oh, Es ist ein Fehler aufgetreten. ' + err.reason);
 }
 
+function cancelIntentHandler() {
+    return function() {
+      this.emit(':tell', 'Einen schönen Tag noch. Ich geh jetzt schlafen.');
+    }
+}
+
 var handlers = {
-    'CancelIntent': function () {
-        this.emit(':tell', 'Einen schoenen Tag noch');
-    },
-    'StopIntent': function () {
-        this.emit(':tell', 'Einen schoenen Tag noch. Stop.');
-    },
+    'AMAZON.StopIntent': cancelIntentHandler(),
+    'AMAZON.CancelIntent': cancelIntentHandler(),
     'SaveIntent': function () {
         if (this.event.request.dialogState !== 'COMPLETED'){
             this.emit(':delegate');
@@ -159,12 +161,12 @@ var handlers = {
             if(err) {
                 return that.emit(':tell', 'Sowas habe ich nicht.');
             }
-            that.emit(':tell', 'Alles klar. Die Telefonnummer von '+datarow.vname+' aus ' + datarow.stadt + ' lautet ' + datarow.telefon);
+            that.emit(':tell', 'Alles klar. Die Telefonnummer von '+datarow.vname+' aus ' + datarow.stadt + ' lautet ' + datarow.telefon.split('').join(' '));
         });
     },
     'LaunchRequest': function() {
-      this.emit(':ask', 'Guten Tag, ich bin eine App die mit Oracle Apex verbunden ist. Sie haben die folgenden Möglichkeiten: Eintrag hinzufügen, Eintrag mit einer bestimmten Nummer lesen. Was soll ich tun?',
-                        'Eintrag hinzufügen oder einen bestimmten Eintrag lesen?');
+        var optionsText = 'Sie haben die folgenden Möglichkeiten: Eintrag hinzufügen, Eintrag mit einer bestimmten Nummer lesen, Telefonnummer für eine bestimmte Person abfragen. Was soll ich tun?';
+        this.emit(':ask', 'Guten Tag, ich bin eine App die mit Oracle Apex verbunden ist. ' + optionsText, optionsText);
     }
 };
 
