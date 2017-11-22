@@ -1,6 +1,8 @@
 # doag17-alexa-demo
 Demo-Anwendung für die Verbindung einer Oracle Apex-Anwendung mit Alexa zum Betrieb auf AWS Lambda.
-Diese einfache Anwendung wurde in Node.JS 6.10.3 geschrieben. Die API die hier auf Oracle Apex Seite angenommen wird ist hier nicht beschrieben ergibt sich aber relativ einfach aus dem Source-Code. Link zum Manuskript folgt.
+Diese einfache Anwendung wurde in Node.JS 6.10.3 geschrieben. Die API die hier auf Oracle Apex Seite angenommen wird ist hier nicht beschrieben ergibt sich aber relativ einfach aus dem Source-Code. 
+
+* [Manuskript](https://www.doag.org/formes/pubfiles/9473622/2017-DEV-Franziska_Hoecker-Dank_Alexa_auf_Bildschirm_Maus_und_Tastatur_verzichten-Manuskript.pdf)
 
 ## Benötigte Accounts
 * [Amazon Developer](https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.c8b33e0f-0f0e-46a4-8e51-c706f0af5fd0/de_DE/info)
