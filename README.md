@@ -2,6 +2,10 @@
 Demo-Anwendung für die Verbindung einer Oracle Apex-Anwendung mit Alexa zum Betrieb auf AWS Lambda.
 Diese einfache Anwendung wurde in Node.JS 6.10.3 geschrieben. Die API die hier auf Oracle Apex Seite angenommen wird ist hier nicht beschrieben ergibt sich aber relativ einfach aus dem Source-Code. Link zum Manuskript folgt.
 
+## Benötigte Accounts
+* [Amazon Developer](https://developer.amazon.com/edw/home.html#/skill/amzn1.ask.skill.c8b33e0f-0f0e-46a4-8e51-c706f0af5fd0/de_DE/info)
+* [AWS Amazon](https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions)
+
 ## Verwendete Libraries
 * [Alexa-Sdk](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs)
 * [Request Library](https://github.com/request/request)
